@@ -1,10 +1,26 @@
 # sensor_community
+This QuickApp reads the PM2.5, PM10, Temperature, Humidity and Airpressure values directly from a sensor somewhere in this world
+That sensor doesn't have to be your own sensor, any sensor can be used, just find one in your neighborhood 
+For locating the sensor(ID's) in your neighborhood see: https://sensor.community/en/
+Select two (!) SensorID's, one for PM2.5 and PM10 values and one for Temperature, Humidity and Airpressure values
 
-QuickApp SENSOR.COMMUNITY 
+The PM2.5, PM10, Temperature, Humidity, Absolute Humidity and Airpressure readings are stored in the value of six (child) devices, so you can read the value from your own scenes
+This QuickApp will send notifications when PM2.5 or PM10 readings reach a breakpoint (if userID ~= 0)
 
-This QuickApp reads the PM2.5, PM10 values directly from a sensor somewhere in this world. That sensor doesn't have to be your sensor, any sensor can be used, just find one in your neighborhood. For locating a sensor(ID) in your neighborhood see: https://sensor.community/en/
+Absolute humidity is the measure of water vapor (moisture) in the air, regardless of temperature. It is expressed as grams of moisture per cubic meter of air (g/m3) 
 
-The PM2.5 and PM10 readings are stored in the value of two (child) devices, so you can read the value from your own scenes. This QuickApp will send notifications when PM2.5 or PM10 readings reach a breakpoint
+
+Version 1.0 (7th February 2021)
+- Added Child Devices for Temperature, Humidity, Absolute Humidity and Airpressure
+- Changed the quickapp variable SensorID to two variables, one for PM values and one for Temperature, Humidity and Airpressure values
+- Added Quickapp variable for debug level (1=some, 2=few, 3=all). Recommended default value is 1.
+- Added QuickApp Variable for user defined icon master device-- Added Airpressure Text in log of Airpressure Child Device
+- Removed QuickApp Variable address, there was no need to change it by user
+- Added values for Temperature, Humidity, Absolute Humidity and Airpressure to the lables
+- Added values for Country, Latitude and Longitude to the labels
+- Added Sensor ID to the log below the value
+- Added "Refresh" button
+- Added extra check for empty data return from Sensor Community
 
 Version 0.4:
 - Added child devices for PM2.5 and PM10
@@ -19,12 +35,16 @@ See also for CVS files: https://archive.luftdaten.info
 See also https://github.com/opendata-stuttgart/
 API documentation: https://github.com/opendata-stuttgart/meta/wiki/EN-APIs
 
+
 Variables (mandatory): 
-- Address = http://data.sensor.community/airrohr/v1/sensor/[SensorID]/
-- SensorID = [number] (your own SensorID or from someone else, 13463 is an example)
-- Interval = [number] (in seconds)
-- Timeout = [number] (in seconds for http timeout)
-- UserID = [number] userID to notify of PM2.5 / PM10 breakpoints
+- sensorID1 = [number] SensorID for PM2.5 and PM10 values, your own sensor or from someone else, 13463 is an example
+- sensorID2 = [number] SensorID for Temperature, Humidity and Airpressure values, your own sensor or from someone else, 13464 is an example
+- interval = [number] in seconds time to get the sensor data from sensor.community
+- timeout = [number] in seconds for http timeout
+- userID = [number] userID to notify of PM2.5 / PM10 breakpoints
+- debugLevel = [number] Debug logging (1=some, 2=few, 3=all) (default = 1)
+- icon = [numbber] User defined icon number (add the icon via an other device and lookup the number)
+
 
 PM2.5 breakpoints
 0 - 30    GOOD (Minimal)
