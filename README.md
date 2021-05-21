@@ -1,5 +1,5 @@
 # sensor_community
-This QuickApp reads the PM2.5, PM10, Temperature, Humidity and Airpressure values directly from a sensor somewhere in this world
+This QuickApp (for the Fibaro Homecenter 3) reads the PM2.5, PM10, Temperature, Humidity and Airpressure values directly from a sensor somewhere in this world
 That sensor doesn't have to be your own sensor, any sensor can be used, just find one in your neighborhood 
 For locating the sensor(ID's) in your neighborhood see: https://sensor.community/en/
 Select two (!) SensorID's, one for PM2.5 and PM10 values and one for Temperature, Humidity and Airpressure values
